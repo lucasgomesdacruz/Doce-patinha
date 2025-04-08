@@ -17,9 +17,9 @@
         .heroText {
             display: flex;
             flex-direction: column;
-            gap: 28px;
+            gap: 1.75rem;
             width: 500px;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
 
             h1 {
                 color: $primary-color;
@@ -29,7 +29,7 @@
 
             p {
                 color: $primary-color;
-                font-size: 20px;
+                font-size: 2.25rem;
                 font-weight: bolder;
             }
 
@@ -55,17 +55,8 @@
             }
 
             figcaption {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                white-space: nowrap;
-                border: 0;
+                
             }
         }
     }
-
 }
