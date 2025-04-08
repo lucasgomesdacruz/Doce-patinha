@@ -1,4 +1,5 @@
 import Hero from "./_components/hero/Hero"
+import Participate from "./_components/participate/Participate"
 import styles from "./Home.module.scss"
 
 
@@ -8,6 +9,7 @@ const Home = () => {
       <section>
         {/* <h1>home</h1> */}
         <Hero />
+        <Participate />
       </section>
     </main>
   )
