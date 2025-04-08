@@ -5,8 +5,10 @@ import styles from "./Home.module.scss"
 const Home = () => {
   return (
     <main className={styles.home}>
-      {/* <h1>home</h1> */}
-      <Hero />
+      <section>
+        {/* <h1>home</h1> */}
+        <Hero />
+      </section>
     </main>
   )
 }
