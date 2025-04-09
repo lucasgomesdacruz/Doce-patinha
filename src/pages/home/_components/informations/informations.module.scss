@@ -1,43 +1,47 @@
 @use "../../../../index.scss" as *;
 
-.heroBg {
+.informationsBg {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $secondary-bg;
+    background-color: $primary-bg;
     width: 100%;
-    height: 445px;
+    height: 500px;
+    margin-top: 60px;
 
-    .heroContainer {
+    .informationsContainer {
         display: flex;
         justify-content: center;
         align-items: center;
         
 
-        .heroText {
+        .informationsText {
             display: flex;
             flex-direction: column;
-            gap: 1.75rem;
-            width: 500px;
+            gap: 25px;
+            width: 707px;
             margin-bottom: 1.25rem;
 
-            h1 {
-                color: $primary-color;
-                font-size: 36px;
-                font-weight: bolder;
+            h2 {
+                color: $standard-color;
+                font-size: 29px;
+                font-weight: normal;
+                line-height: 45px;
             }
 
             p {
-                color: $primary-color;
+                color: $standard-color;
                 font-size: 20px;
-                font-weight: bolder;
+                font-weight: normal;
+                width: 497px;
+                line-height: 35px;
             }
 
             a {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: $primary-bg;
+                background-color: $secondary-color;
                 color: $standard-color;
                 width: 261px;
                 height: 50px;
@@ -50,8 +54,8 @@
         figure {
 
             img {
-                width: 416px;
-                height: 358px;
+                width: 403px;
+                height: 481px;
             }
 
             figcaption {
