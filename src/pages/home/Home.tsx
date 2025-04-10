@@ -1,3 +1,4 @@
+import Contact from "./_components/contact/Contact"
 import Hero from "./_components/hero/Hero"
 import Informations from "./_components/informations/Informations"
 import Participate from "./_components/participate/Participate"
@@ -11,6 +12,7 @@ const Home = () => {
         <Hero />
         <Participate />
         <Informations />
+        <Contact />
       </section>
     </main>
   )
