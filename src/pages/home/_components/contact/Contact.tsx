@@ -11,22 +11,32 @@ const Contact = () => {
   return (
     <section className={styles.contactBg}>
         <div className={styles.contactContainer}>
-            <div className={styles.containerImg}>
+            <figure className={styles.containerImg}>
                 <img src={imgBg} alt="imagem de uma mulher beijando a testa do seu pet" />
-            </div>
+            </figure>
             <div className={styles.containerText}>
                 <h3>Contatos</h3>
                 <p>Precisa de mais informações? Estamos à disposição! Entre em contato para retirar dúvidas.</p>
-                <div>
-                    <MdOutlineMail />
-                    <p>docepatinha@gmail.com</p>
-                </div>
-                <div>
-                    <LuPhone />
-                    <p>(21) 992117045</p>
-                </div>
+                
+                <address className={styles.address}>
+                    <div>
+                        <MdOutlineMail aria-hidden="true" />
+                        <a href="mailto:docepatinha@gmail.com">docepatinha@gmail.com</a>
+                    </div>
+                    <div>
+                        <LuPhone />
+                        <a
+                            href="https://wa.me/5521992117045"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.whatsappBtn}
+                        >
+                            (21) 992117045
+                        </a>
+                    </div>
+                </address>
 
-                <Button icon={<FaWhatsapp />} text="Dúvidas ?" />
+                <Button className={styles.button} icon={<FaWhatsapp />} text="Dúvidas ?"/>
             </div>
         </div>
       

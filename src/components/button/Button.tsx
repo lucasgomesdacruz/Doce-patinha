@@ -1,18 +1,18 @@
-import { ReactNode } from "react"
-import styles from "./Button.module.scss"
+import { ReactNode } from "react";
 
 type ButtonProps = {
-  text: string
-  icon?: ReactNode
-}
+  text: string;
+  icon?: ReactNode;
+  className?: string;
+};
 
-const Button = ({ text, icon }: ButtonProps) => {
+const Button = ({ text, icon, className }: ButtonProps) => {
   return (
-    <a className={styles.button}>
+    <a className={className}>
       {icon && <span>{icon}</span>}
       {text}
     </a>
-  )
-}
-export default Button
+  );
+};
 
+export default Button;
