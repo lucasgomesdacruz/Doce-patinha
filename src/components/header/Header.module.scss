@@ -37,15 +37,17 @@
             li {
                 list-style: none;
 
-                a {
+                .navLink {
                     text-decoration: none;
                     color: white;
+                    cursor: pointer;
                 }
             }
         }
 
         .enterForm {
             display: flex;
+            align-items: center;
             gap: 0.60rem;
             
             
@@ -55,6 +57,19 @@
                 font-weight: bolder;
                 font-size: 1rem;
             }
+
+            .create {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $secondary-bg;
+                color: $standard-color;
+                width: 142px;
+                height: 38px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
         }
     }
 }

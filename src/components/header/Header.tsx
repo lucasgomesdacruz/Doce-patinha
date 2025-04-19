@@ -2,6 +2,9 @@ import { Link } from "react-router-dom"
 import logoPet from "../../assets/logoPet.svg"
 import styles from "./Header.module.scss"
 
+import { Link as ScrollLink } from 'react-scroll'
+
+
 
 const Header = () => {
   return (
@@ -12,33 +15,31 @@ const Header = () => {
             <img src={logoPet} alt="Logo do da Doce Patinha" />
           </div>
           <ul>
-            <li>
-              <Link to="#">
-                Início
-              </Link>
-              
-            </li>
-            <li>
-              <Link to="#">
-                Como participar
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                Prêmios
-              </Link>
-              
-            </li>
-            <li>
-              <Link to="#">
-                Dúvidas
-              </Link>
-             
-            </li>
+              <li>
+                <ScrollLink className={styles.navLink} to="inicio" smooth={true} duration={500} offset={-80}>
+                  Início
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink className={styles.navLink} to="participar" smooth={true} duration={500} offset={-80}>
+                  Como participar
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink className={styles.navLink} to="premios" smooth={true} duration={500} offset={-80}>
+                  Prêmios
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink className={styles.navLink} to="duvidas" smooth={true} duration={500} offset={-80}>
+                  Dúvidas
+                </ScrollLink>
+              </li>
           </ul>
+              
           <div className={styles.enterForm}>
             <Link to="#">Entrar</Link>
-            <Link to="#">Cadastrar</Link>
+            <Link to="#" className={styles.create}>Cadastrar</Link>
           </div>
       </div>
     </header>

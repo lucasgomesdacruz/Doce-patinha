@@ -9,12 +9,17 @@ import styles from "./Home.module.scss"
 const Home = () => {
   return (
     <main className={styles.home}>
-      <section>
-        <Hero />
+      <section id="inicio">
+          <Hero />
+      </section>
+      <section id="participar">
         <Participate />
+      </section>
+      <section id="premios">
         <Informations />
+      </section>
+      <section id="duvidas">
         <Faq />
-        <Contact />
       </section>
     </main>
   )
