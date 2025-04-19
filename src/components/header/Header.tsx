@@ -35,6 +35,11 @@ const Header = () => {
                   Dúvidas
                 </ScrollLink>
               </li>
+              <li>
+                <ScrollLink className={styles.navLink} to="contato" smooth={true} duration={500} offset={-80}>
+                  Contatos
+                </ScrollLink>
+              </li>
           </ul>
               
           <div className={styles.enterForm}>
