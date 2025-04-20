@@ -120,9 +120,10 @@
     
         .participateContainer {
             width: 95%;
-            height: 650px;
+            height: 100%;
+            position: static;
 
-            flex-direction: column-reverse;
+            flex-direction: column;
     
             .participateText {
                 
@@ -149,11 +150,27 @@
     
                     }
                 }
+
+                .partipateImgMobile {
+                    width: auto;
+                    height: auto;
+                    display: flex;
+
+                    img {
+                        display: flex;
+                        position: static;
+                        width: 300px;
+                        height: auto;
+                        border-radius: 0px;
+                    }
+                }
             }
     
-            figure {
+            .participateImgDesktop {
+
                 img {
-                    top: 308px;
+                    display: none;
+                    top: 294px;
                     right: 30px;
                     border-radius: 15px 15px 15px 41px;
                     width: 90%;

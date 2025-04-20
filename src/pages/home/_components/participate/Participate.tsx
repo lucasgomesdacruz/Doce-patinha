@@ -27,10 +27,13 @@ const Participate = () => {
             </li>
           </ul>
           <Button text="Cadastre seu Cupom"/>
+          <figure className={styles.partipateImgMobile}>
+            <img src={participateImg} alt="imagem ilustrativa de um cachorro" />
+          </figure>
+
         </div>
-        <figure>
+        <figure className={styles.participateImgDesktop}>
           <img src={participateImg} alt="imagem ilustrativa de um cachorro" />
-          <figcaption className="sr-only">Cachorro feliz ilustrando promoção de compras grátis</figcaption>
         </figure>
           
         
