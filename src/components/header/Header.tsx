@@ -1,51 +1,53 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import logoPet from "../../assets/logoPet.svg"
 import styles from "./Header.module.scss"
 
 import { Link as ScrollLink } from 'react-scroll'
-
-
+import { MdClose, MdMenu } from "react-icons/md"
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-          <div className={styles.containerLogo}>
-            <h1>Doce Patinha</h1>
-            <img src={logoPet} alt="Logo do da Doce Patinha" />
-          </div>
-          <ul>
-              <li>
-                <ScrollLink className={styles.navLink} to="inicio" smooth={true} duration={500} offset={-80}>
-                  Início
-                </ScrollLink>
-              </li>
-              <li>
-                <ScrollLink className={styles.navLink} to="participar" smooth={true} duration={500} offset={-80}>
-                  Como participar
-                </ScrollLink>
-              </li>
-              <li>
-                <ScrollLink className={styles.navLink} to="premios" smooth={true} duration={500} offset={-80}>
-                  Prêmios
-                </ScrollLink>
-              </li>
-              <li>
-                <ScrollLink className={styles.navLink} to="duvidas" smooth={true} duration={500} offset={-80}>
-                  Dúvidas
-                </ScrollLink>
-              </li>
-              <li>
-                <ScrollLink className={styles.navLink} to="contato" smooth={true} duration={500} offset={-80}>
-                  Contatos
-                </ScrollLink>
-              </li>
-          </ul>
-              
-          <div className={styles.enterForm}>
-            <Link to="#">Entrar</Link>
-            <Link to="#" className={styles.create}>Cadastrar</Link>
-          </div>
+        <div className={styles.containerLogo}>
+          <h1>Doce Patinha</h1>
+          <img src={logoPet} alt="Logo da Doce Patinha" />
+        </div>
+
+        <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>
+          <li><ScrollLink className={styles.navLink} to="inicio" smooth duration={500} offset={-80} onClick={closeMenu}>Início</ScrollLink></li>
+          <li><ScrollLink className={styles.navLink} to="participar" smooth duration={500} offset={-80} onClick={closeMenu}>Como participar</ScrollLink></li>
+          <li><ScrollLink className={styles.navLink} to="premios" smooth duration={500} offset={-80} onClick={closeMenu}>Prêmios</ScrollLink></li>
+          <li><ScrollLink className={styles.navLink} to="duvidas" smooth duration={500} offset={-80} onClick={closeMenu}>Dúvidas</ScrollLink></li>
+          <li><ScrollLink className={styles.navLink} to="contato" smooth duration={500} offset={-80} onClick={closeMenu}>Contatos</ScrollLink></li>
+
+          {/* Botões Mobile */}
+          <li className={styles.mobileButtons}>
+            <Link to="#" onClick={closeMenu}>Entrar</Link>
+            <Link to="#" className={styles.create} onClick={closeMenu}>Cadastrar</Link>
+          </li>
+        </ul>
+
+        {/* Botões Desktop */}
+        <div className={styles.enterForm}>
+          <Link to="#" onClick={closeMenu}>Entrar</Link>
+          <Link to="#" className={styles.create} onClick={closeMenu}>Cadastrar</Link>
+        </div>
+
+        <button className={styles.menuToggle} onClick={toggleMenu} aria-label="Abrir menu">
+          {isMenuOpen ? <MdClose /> : <MdMenu />}
+        </button>
       </div>
     </header>
   )
