@@ -30,7 +30,7 @@
                 justify-content: center;
                 gap: 3px;
                 color: $primary-color;
-                font-size: 40px;
+                font-size: 2.5rem;
                 font-weight: bolder;
             }
 
@@ -47,12 +47,10 @@
 
                     p {
                         color: $primary-color;
-                        font-size: 20px;
+                        font-size: 1.25rem;
                         font-weight: bolder;
                     }
-
                 }
-
             }
 
             a {
@@ -75,6 +73,91 @@
                 top: 11px;
                 right: 0px;
                 border-radius: 0px 0px 50px 0px;
+            }
+        }
+    }
+}
+@media (min-width: 481px) and (max-width: 1199px) { 
+    .participateBg {
+    
+        .participateContainer {
+            width: 95%;
+            height: 851px;
+
+            flex-direction: column-reverse;
+    
+            .participateText {
+                margin-left: 0px;
+                align-items: center;
+    
+                h2 {
+                    font-size: 2.5rem;
+                }
+    
+                ul {
+    
+                    li {
+    
+                        p {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+            }
+    
+            figure {
+                img {
+                    top: 362px;
+                    right: 168px;
+                    border-radius: 0px 0px 0px 0px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 481px) { 
+    .participateBg {
+    
+        .participateContainer {
+            width: 95%;
+            height: 650px;
+
+            flex-direction: column-reverse;
+    
+            .participateText {
+                
+                margin-left: 0px;
+                align-items: center;
+                margin-top: 20px;
+    
+                h2 {
+                    font-size: 1.2rem;
+                }
+    
+                ul {
+                    width: 95%;
+    
+                    li {
+                        
+                        img {
+                            width: 30px;
+                        }
+    
+                        p {
+                            font-size: 1rem;
+                        }
+    
+                    }
+                }
+            }
+    
+            figure {
+                img {
+                    top: 308px;
+                    right: 30px;
+                    border-radius: 15px 15px 15px 41px;
+                    width: 90%;
+                }
             }
         }
     }
