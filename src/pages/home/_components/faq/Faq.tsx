@@ -30,7 +30,7 @@ export function Faq() {
 
   return (
     <section className={styles.faqBg}>
-      <div>
+      <div className={styles.containerContent}>
         <h2 className={styles.titleFaq}>Perguntas Frequentes</h2>
         {faqData.map((item, i) => (
           <div key={i} className={styles.containerFaq}>
