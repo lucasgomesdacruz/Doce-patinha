@@ -1,63 +1,149 @@
 @use "../../../../index.scss" as *;
 
 .heroBg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-bg;
+  width: 100%;
+  height: 445px;
+  margin-top: 75px;
+
+  .heroContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $secondary-bg;
-    width: 100%;
-    height: 445px;
-    margin-top: 75px;
 
-    .heroContainer {
+    .heroText {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      width: 500px;
+      margin-bottom: 1.25rem;
+
+      h1 {
+        color: $primary-color;
+        font-size: 2.25rem; 
+        font-weight: bolder;
+      }
+
+      p {
+        color: $primary-color;
+        font-size: 1.25rem; 
+        font-weight: bolder;
+      }
+
+      a {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: $primary-bg;
+        color: $standard-color;
+        width: 261px;
+        height: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+
+    figure {
+      img {
+        width: 416px;
+        height: 358px;
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+    .heroContainer {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      .heroText {
+        width: 90%;
         
-
-        .heroText {
-            display: flex;
-            flex-direction: column;
-            gap: 1.75rem;
-            width: 500px;
-            margin-bottom: 1.25rem;
-
-            h1 {
-                color: $primary-color;
-                font-size: 36px;
-                font-weight: bolder;
-            }
-
-            p {
-                color: $primary-color;
-                font-size: 20px;
-                font-weight: bolder;
-            }
-
-            a {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: $primary-bg;
-                color: $standard-color;
-                width: 261px;
-                height: 50px;
-                border-radius: 10px;
-                cursor: pointer;
-            }
-            
+        
+        h1 {
+          font-size: 2rem;
         }
-
-        figure {
-
-            img {
-                width: 416px;
-                height: 358px;
-            }
-
-            figcaption {
-                
-            }
+        p {
+          font-size: 1.125rem;
         }
+      }
+
+      figure {
+        img {
+          width: 90%;
+          height: auto;
+        }
+      }
     }
 }
+
+@media (min-width: 481px) and (max-width: 1199px) {
+  .heroBg {
+    height: 700px;
+  
+    .heroContainer {
+
+      .heroText {
+
+        align-items: center;
+  
+        h1 {
+          font-size: 2.15rem;
+        }
+  
+        p {
+          font-size: 1.15rem;
+        }
+      }
+  
+      figure {
+        img {
+          width: 350px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .heroBg {
+    height: 550px;
+  
+    .heroContainer {
+  
+      .heroText {
+
+        align-items: center;
+        gap: 1rem;
+        width: 80%;
+        h1 {
+          font-size: 1.5rem;
+        }
+  
+        p {
+          color: $primary-color;
+          font-size: 0.80rem;
+          font-weight: bolder;
+        }
+  
+        a {
+          width: 210px;
+        }
+      }
+  
+      figure {
+        img {
+          width: 300px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+ 
+
