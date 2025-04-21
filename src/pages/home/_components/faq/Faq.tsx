@@ -34,11 +34,12 @@ export function Faq() {
         <h2 className={styles.titleFaq}>Perguntas Frequentes</h2>
         {faqData.map((item, i) => (
           <div key={i} className={styles.containerFaq}>
-            <div className={styles.containerButton}>
+            
+            <div className={styles.containerButton} onClick={() => setActive(active === i ? null : i)}>
               <button
                 type="button"
                 className={styles.button}
-                onClick={() => setActive(active === i ? null : i)}
+                
               >
                 {item.question}
               </button>

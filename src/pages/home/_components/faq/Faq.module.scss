@@ -33,6 +33,7 @@
         justify-content: space-between;
         display: flex;
         flex-direction: row;
+        position: relative;
 
         .button {
           background-color: transparent;
@@ -42,10 +43,14 @@
           font-weight: bolder;
           cursor: pointer;
           text-align: left;
+          z-index: 1;
+          width: 100%;
         }
 
         .icon {
           transition: transform 0.3s ease;
+          position: absolute;
+          right: 0px;
         }
 
         .rotate {
@@ -87,12 +92,28 @@
 
       .titleFaq {
         font-size: 1.375rem;
+        width: 92%;
+        margin: 0 auto;
       }
 
       .containerFaq {
+        width: 95%;
+        
         .containerButton {
-          .button {
+          width: 95%;
+
+          .button { 
+            width: 80%;
             font-size: 1rem;
+          }
+
+          .icon {
+            transition: transform 0.3s ease;
+            position: absolute;
+            right: -8px;
+            top: -3px;
+            z-index: 5;
+            width: 30px;
           }
         }
 
@@ -103,6 +124,8 @@
         .open {
           max-height: 200px;
           width: 95%;
+          margin: auto;
+          max-width: 400px;
         }
       }
     }
