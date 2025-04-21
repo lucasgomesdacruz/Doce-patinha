@@ -20,10 +20,10 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.containerLogo}>
+        <Link to="/"  className={styles.containerLogo}>
           <h1>Doce Patinha</h1>
           <img src={logoPet} alt="Logo da Doce Patinha" />
-        </div>
+        </Link>
 
         <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>
           <li><ScrollLink className={styles.navLink} to="inicio" smooth duration={500} offset={-80} onClick={closeMenu}>Início</ScrollLink></li>
@@ -34,15 +34,15 @@ const Header = () => {
 
           {/* Botões Mobile */}
           <li className={styles.mobileButtons}>
-            <Link to="#" onClick={closeMenu}>Entrar</Link>
-            <Link to="#" className={styles.create} onClick={closeMenu}>Cadastrar</Link>
+            <Link to="/entrar" onClick={closeMenu}>Entrar</Link>
+            <Link to="/register" className={styles.create} onClick={closeMenu}>Cadastrar</Link>
           </li>
         </ul>
 
         {/* Botões Desktop */}
         <div className={styles.enterForm}>
-          <Link to="#" onClick={closeMenu}>Entrar</Link>
-          <Link to="#" className={styles.create} onClick={closeMenu}>Cadastrar</Link>
+          <Link to="/entrar" onClick={closeMenu}>Entrar</Link>
+          <Link to="/register" className={styles.create} onClick={closeMenu}>Cadastrar</Link>
         </div>
 
         <button className={styles.menuToggle} onClick={toggleMenu} aria-label="Abrir menu">
