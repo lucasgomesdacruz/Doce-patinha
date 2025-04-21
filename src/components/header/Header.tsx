@@ -1,36 +1,53 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import logoPet from "../../assets/logoPet.svg"
 import styles from "./Header.module.scss"
-
-import { Link as ScrollLink } from 'react-scroll'
 import { MdClose, MdMenu } from "react-icons/md"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
-  const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev)
-  }
+  const toggleMenu = () => setIsMenuOpen(prev => !prev)
+  const closeMenu = () => setIsMenuOpen(false)
 
-  const closeMenu = () => {
-    setIsMenuOpen(false)
+  const handleNavClick = (e: React.MouseEvent, id: string) => {
+    e.preventDefault()
+    closeMenu()
+
+    const scrollToSection = () => {
+      const element = document.getElementById(id)
+      if (element) {
+
+        const yOffset = -80
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+        window.scrollTo({ top: y, behavior: "smooth" })
+      }
+    }
+
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false })
+      setTimeout(scrollToSection, 100)
+    } else {
+      scrollToSection()
+    }
   }
 
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link to="/"  className={styles.containerLogo}>
+        <Link to="/" className={styles.containerLogo}>
           <h1>Doce Patinha</h1>
           <img src={logoPet} alt="Logo da Doce Patinha" />
         </Link>
 
         <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>
-          <li><ScrollLink className={styles.navLink} to="inicio" smooth duration={500} offset={-80} onClick={closeMenu}>Início</ScrollLink></li>
-          <li><ScrollLink className={styles.navLink} to="participar" smooth duration={500} offset={-80} onClick={closeMenu}>Como participar</ScrollLink></li>
-          <li><ScrollLink className={styles.navLink} to="premios" smooth duration={500} offset={-80} onClick={closeMenu}>Prêmios</ScrollLink></li>
-          <li><ScrollLink className={styles.navLink} to="duvidas" smooth duration={500} offset={-80} onClick={closeMenu}>Dúvidas</ScrollLink></li>
-          <li><ScrollLink className={styles.navLink} to="contato" smooth duration={500} offset={-80} onClick={closeMenu}>Contatos</ScrollLink></li>
+          <li><a href="#inicio" className={styles.navLink} onClick={(e) => handleNavClick(e, "inicio")}>Início</a></li>
+          <li><a href="#participar" className={styles.navLink} onClick={(e) => handleNavClick(e, "participar")}>Como participar</a></li>
+          <li><a href="#premios" className={styles.navLink} onClick={(e) => handleNavClick(e, "premios")}>Prêmios</a></li>
+          <li><a href="#duvidas" className={styles.navLink} onClick={(e) => handleNavClick(e, "duvidas")}>Dúvidas</a></li>
+          <li><a href="#contato" className={styles.navLink} onClick={(e) => handleNavClick(e, "contato")}>Contatos</a></li>
 
           {/* Botões Mobile */}
           <li className={styles.mobileButtons}>
