@@ -1,9 +1,9 @@
-
-
 import styles from "./Register.module.scss"
+import useScrollToTop from "../../hooks/UseScrollToTop";
 
 
 const Register = () => {
+  useScrollToTop();
   return (
     <div className={styles.container}>
       <h1>Opa, ainda estamos desenvolvendo essa parte</h1>

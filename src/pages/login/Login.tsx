@@ -1,7 +1,12 @@
+
 import styles from "./Login.module.scss"
+import useScrollToTop from "../../hooks/UseScrollToTop";
 
 
 const Login = () => {
+  useScrollToTop();
+  
+
   return (
     <div className={styles.container}>
       <h1>Opa, ainda estamos desenvolvendo essa parte</h1>
