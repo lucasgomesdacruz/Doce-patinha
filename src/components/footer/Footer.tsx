@@ -7,12 +7,6 @@ import { AiOutlineInstagram } from "react-icons/ai";
 
 import logoPet from "../../assets/logoPet.svg"
 
-
-
-
-
-
-
 const Footer = () => {
   return (
     <footer className={styles.footerBg}>
@@ -25,15 +19,24 @@ const Footer = () => {
                     </li>
                     <li>
                         <h3>Endereço</h3>
-                        <p>Av. Brasil, 000 - Logo ali, Rio de Janeiro - RJ</p>
+                        <a href="https://www.google.com/maps?q=Av.+Brasil,+000+-+Logo+ali,+Rio+de+Janeiro+-+RJ" target="_blank" rel="noopener noreferrer">
+                            <p>Av. Brasil, 000 - Logo ali, Rio de Janeiro - RJ</p>
+                        </a>
                     </li>
                     <li>
                         <h3>Telefone</h3>
-                        <p>0800 888 0000</p>
+                        <a
+                            href="https://wa.me/5521992117045"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.whatsappBtn}
+                        >
+                            (21) 992117045
+                        </a>
                     </li>
                     <li>
                         <h3>Email</h3>
-                        <p>docepatinha@gmail.com</p>
+                        <a href="mailto:docepatinha@gmail.com">docepatinha@gmail.com</a>
                     </li>
                 </ul>
                 <div className={styles.containerRedes}>
@@ -43,10 +46,26 @@ const Footer = () => {
                     </div>
                     <p>© 2025 Design/Code by Lucas Gomes</p>
                     <ul>
-                        <li><AiOutlineFacebook /></li>
-                        <li><AiOutlineLinkedin /></li>
-                        <li><AiOutlineInstagram /></li>
-                        <li><AiOutlineYoutube /></li>
+                        <li>
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <AiOutlineFacebook />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <AiOutlineLinkedin />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                            <AiOutlineInstagram />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                            <AiOutlineYoutube />
+                            </a>
+                        </li>
                     </ul>
                 </div>
         

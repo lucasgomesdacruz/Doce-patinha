@@ -45,6 +45,12 @@
           p {
             font-size: 14px;
           }
+
+          a {
+            font-size: 14px;
+            color: $standard-color;
+            text-decoration: none;
+          }
         }
       }
 
@@ -76,8 +82,12 @@
 
         p {
           font-size: 14px;
-          font-weight: lighter;
+          font-weight: normal;
           margin-top: 10px;
+        }
+
+        a {
+          color: $standard-color;
         }
 
         ul {
