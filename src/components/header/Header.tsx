@@ -58,7 +58,7 @@ const Header = () => {
 
         {/* Botões Desktop */}
         <div className={styles.enterForm}>
-          <Link to="/entrar" onClick={closeMenu}>Entrar</Link>
+          <Link to="/login" onClick={closeMenu}>Entrar</Link>
           <Link to="/register" className={styles.create} onClick={closeMenu}>Cadastrar</Link>
         </div>
 
