@@ -9,10 +9,10 @@ type ButtonProps = {
 
 const ButtonBrown = ({ text, icon }: ButtonProps) => {
   return (
-    <a className={styles.buttonBrown}>
+    <button className={styles.buttonBrown}>
       {icon && <span>{icon}</span>}
       {text}
-    </a>
+    </button>
   );
 };
 
