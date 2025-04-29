@@ -1,16 +1,81 @@
+
 import styles from "./Register.module.scss"
 import useScrollToTop from "../../hooks/UseScrollToTop";
+import Input from "../../components/input/Input";
+import ButtonBrown from "../../components/buttonBrown/ButtonBrown";
+import { RxEnter } from "react-icons/rx";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Link } from "react-router-dom";
 
+const schema = z.object({
+  name: z.string().min(1,"O campo nome é obrigatório."),
+  email: z.string().email("insira um email válido").min(1,"O campo é obrigatório."),
+  password: z.string().min(8,"A senha deve ter pelo menos 8 caracteres").min(1, "O campo senha é obrigatorio"),
+  cpf: z.string()
+    .min(1, "O campo CPF é obrigatório.")
+    .regex(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, "Insira um CPF válido (ex: 000.000.000-00)")
+})
+
+type FormData = z.infer<typeof schema>
 
 const Register = () => {
   useScrollToTop();
+
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+    resolver: zodResolver(schema),
+    mode: "onChange"
+  })
+
+  function onSubmit(data:FormData) {
+    console.log(data)
+  }
+  
   return (
-    <div className={styles.container}>
-      <h1>Opa, ainda estamos desenvolvendo essa parte</h1>
-      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Fox.png" alt="Fox" width="25" height="25" />
-    </div>
+    <section className={styles.formBg}>
+      <div className={styles.formContainer}>
+        <h1>Cadastre-se</h1>
+
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            type="text"
+            placeholder="Digite seu nome"
+            name="name"
+            label="Nome"
+            error={errors.name?.message}
+            register={register}
+          />
+          <Input
+            type="text"
+            placeholder="Digite seu CPF"
+            name="cpf"
+            label="CPF"
+            error={errors.cpf?.message}
+            register={register}
+          />
+          <Input
+            type="email"
+            placeholder="Digite seu e-mail"
+            name="email"
+            label="E-mail"
+            error={errors.email?.message}
+            register={register}
+          />
+          <Input
+            type="password"
+            placeholder="Digite sua senha"
+            name="password"
+            label="Senha"
+            error={errors.password?.message}
+            register={register}
+          />
+          <ButtonBrown  icon={<RxEnter />} text="Entrar"/>
+          <p>Ja possui uma conta ? <Link to="/login">Entrar</Link></p>
+        </form>
+      </div>
+    </section>
   )
 }
 
 export default Register
-
