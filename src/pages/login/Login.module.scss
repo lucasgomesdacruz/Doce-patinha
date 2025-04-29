@@ -1,20 +1,43 @@
 @use "../../index.scss" as *;
 
-.container {
+.formBg {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-    h1 {
-        color: $primary-color;
-        text-align: center;
-    }
+    .formContainer {
+        width: 450px;
+        height: 456px;
+        // outline: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
 
-    img {
-        max-width: 300px;
-        width: 80%;
-        height: auto;
+        h1 {
+            color: $primary-color;
+            text-align: center;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 300px;
+            width: 100%;
+        }
+    
+        p {
+            color: $primary-color;
+            text-align: center; 
+            font-weight: bolder;
+    
+            span {
+                text-decoration: underline;
+    
+            }
+        }
     }
 }
