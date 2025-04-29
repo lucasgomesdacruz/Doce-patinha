@@ -1,0 +1,20 @@
+@use "../../index.scss" as *;
+
+.buttonBrown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    max-width: 450px;
+    height: 45px;
+    width: 100%;
+    background-color: $primary-bg;
+    font-family: 16px;
+    font-weight: bolder;
+    color: $standard-color;
+    border-radius: 10px;
+
+    svg {
+        font-size: 22px;
+    }
+}
