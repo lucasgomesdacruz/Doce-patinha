@@ -71,7 +71,7 @@ const Register = () => {
             register={register}
           />
           <ButtonBrown  icon={<RxEnter />} text="Entrar"/>
-          <p>Ja possui uma conta ? <Link to="/login">Entrar</Link></p>
+          <p>Já possui uma conta ? <Link to="/login">Entrar</Link></p>
         </form>
       </div>
     </section>
