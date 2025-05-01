@@ -7,7 +7,10 @@ import { RxEnter } from "react-icons/rx";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../../services/firebaseConnection";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+
 
 const schema = z.object({
   name: z.string().min(1,"O campo nome é obrigatório."),
@@ -23,13 +26,27 @@ type FormData = z.infer<typeof schema>
 const Register = () => {
   useScrollToTop();
 
+  const navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
     mode: "onChange"
   })
 
-  function onSubmit(data:FormData) {
-    console.log(data)
+  async function onSubmit(data:FormData) {
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+    .then(async (user) => {
+      await updateProfile(user.user, {
+        displayName: data.name
+      })
+
+      console.log("cadastrado com sucesso!")
+      console.log(user)
+      navigate("/", { replace: true })
+    })
+    .catch((error) => {
+      console.log("error ao cadastrar esse usuário")
+      console.log(error);
+    })
   }
   
   return (
@@ -70,7 +87,7 @@ const Register = () => {
             error={errors.password?.message}
             register={register}
           />
-          <ButtonBrown  icon={<RxEnter />} text="Entrar"/>
+          <ButtonBrown  icon={<RxEnter />} text="Cadastrar" type="submit"/>
           <p>Já possui uma conta ? <Link to="/login">Entrar</Link></p>
         </form>
       </div>
