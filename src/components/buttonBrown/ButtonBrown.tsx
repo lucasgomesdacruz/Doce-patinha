@@ -5,11 +5,13 @@ type ButtonProps = {
   text: string;
   icon?: ReactNode;
   className?: string;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
 };
 
-const ButtonBrown = ({ text, icon }: ButtonProps) => {
+const ButtonBrown = ({ text, icon, type, onClick}: ButtonProps) => {
   return (
-    <button className={styles.buttonBrown}>
+    <button className={styles.buttonBrown} type={type} onClick={onClick}>
       {icon && <span>{icon}</span>}
       {text}
     </button>
