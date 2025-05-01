@@ -1,4 +1,4 @@
-
+import styles from "./RegisterBuy.module.scss"
 
 const RegisterBuy = () => {
   return (
